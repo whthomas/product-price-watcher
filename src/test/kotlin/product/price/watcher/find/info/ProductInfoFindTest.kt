@@ -1,12 +1,15 @@
 package product.price.watcher.find.info
 
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
-import product.price.watcher.domain.model.ProduceType
+import product.price.watcher.domain.acl.IProductInfoClient
 import product.price.watcher.domain.model.ProductInfo
+import product.price.watcher.infrastructure.domain.acl.ProductInfoClient
 import product.price.watcher.infrastructure.domain.repo.ProductInfoRepo
+import product.price.watcher.infrastructure.integration.DomainRegistry
 
 
 /**
@@ -19,6 +22,17 @@ import product.price.watcher.infrastructure.domain.repo.ProductInfoRepo
  */
 class ProductInfoFindTest {
 
+    companion object {
+        @BeforeAll
+        @JvmStatic
+        fun init() {
+            DomainRegistry.initBeans {
+                it[IProductInfoClient::class.java] = ProductInfoClient()
+                it
+            }
+        }
+    }
+
     @Test
     fun `从指定文件中获取商品信息`() {
 
@@ -28,16 +42,16 @@ class ProductInfoFindTest {
 
     }
 
-    @ParameterizedTest(name = "should return {0} given {1}")
+    @ParameterizedTest(name = "从{1}获取到商品{0}的价格")
     @CsvSource(
-        "'电视', 'https://www.baidu.com' ",
-        "'空调', 'https://www.baidu.com' "
+        "'电视1', 'https://item.jd.com/100005855324.html' ",
+        "'电视2', 'https://item.jd.com/100003676666.html' "
     )
     fun `从指定URL上获取商品的价格`(name: String, link: String) {
 
         val findRealtimePricePrice = ProductInfo(
             name,
-            ProduceType.TV,
+            "电视",
             link
         ).findRealtimePricePrice()
 
@@ -57,6 +71,5 @@ class ProductInfoFindTest {
             }
 
     }
-
 
 }

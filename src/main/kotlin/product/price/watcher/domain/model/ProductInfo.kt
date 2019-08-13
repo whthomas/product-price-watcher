@@ -11,7 +11,7 @@ class ProductInfo(
     /**
      * 商品类型
      */
-    val produceType: ProduceType,
+    val produceType: String,
     /**
      * 购买链接
      */
@@ -29,9 +29,4 @@ class ProductInfo(
 
     }
 
-}
-
-
-enum class ProduceType {
-    TV
 }

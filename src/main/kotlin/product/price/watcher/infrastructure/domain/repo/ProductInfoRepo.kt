@@ -1,7 +1,6 @@
 package product.price.watcher.infrastructure.domain.repo
 
 import org.springframework.stereotype.Component
-import product.price.watcher.domain.model.ProduceType
 import product.price.watcher.domain.model.ProductInfo
 import product.price.watcher.domain.repo.IProductInfoRepo
 import java.io.BufferedReader
@@ -42,7 +41,7 @@ fun String.toProductInfo(): ProductInfo {
     // 根据约定
     return ProductInfo(
         name = infos[1],
-        produceType = ProduceType.valueOf(infos[0]),
+        produceType = infos[0],
         buyingLink = infos[2]
     )
 
