@@ -1,4 +1,4 @@
-package product.price.watcher.infrastructure.acl.product.info
+package product.price.watcher.infrastructure.domain.acl.product.info
 
 import okhttp3.OkHttpClient
 

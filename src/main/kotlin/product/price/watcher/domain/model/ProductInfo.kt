@@ -33,5 +33,5 @@ class ProductInfo(
 
 
 enum class ProduceType {
-
+    TV
 }

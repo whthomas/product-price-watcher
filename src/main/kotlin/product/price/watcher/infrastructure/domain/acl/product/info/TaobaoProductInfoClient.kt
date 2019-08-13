@@ -1,6 +1,6 @@
-package product.price.watcher.infrastructure.acl.product.info
+package product.price.watcher.infrastructure.domain.acl.product.info
 
-class JDProductInfoClient(
+class TaobaoProductInfoClient(
     requestURL: String
 ) : PlatformProductClient(requestURL) {
 

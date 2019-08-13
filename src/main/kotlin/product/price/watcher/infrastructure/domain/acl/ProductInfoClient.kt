@@ -1,8 +1,8 @@
-package product.price.watcher.infrastructure.acl
+package product.price.watcher.infrastructure.domain.acl
 
 import org.springframework.stereotype.Component
 import product.price.watcher.domain.acl.IProductInfoClient
-import product.price.watcher.infrastructure.acl.product.info.PlatformProductClient
+import product.price.watcher.infrastructure.domain.acl.product.info.PlatformProductClient
 
 @Component
 class ProductInfoClient : IProductInfoClient {
