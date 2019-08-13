@@ -1,4 +1,4 @@
-package product.price.watcher.infrastructure;
+package product.price.watcher.infrastructure.integration;
 
 
 import org.springframework.beans.BeansException;

@@ -1,5 +1,8 @@
 package product.price.watcher.domain.model
 
+import product.price.watcher.domain.acl.IProductInfoClient
+import product.price.watcher.infrastructure.integration.DomainRegistry
+
 class ProductInfo(
     /**
      * 商品名称
@@ -19,7 +22,11 @@ class ProductInfo(
      * 查询实时价格
      */
     fun findRealtimePricePrice(): Int {
-        TODO()
+
+        return DomainRegistry
+            .bean(IProductInfoClient::class.java)
+            .getRealTimePrice(buyingLink)
+
     }
 
 }
