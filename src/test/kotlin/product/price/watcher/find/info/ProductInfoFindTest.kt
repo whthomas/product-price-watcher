@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource
 /**
  * 商品信息获取
  */
-class ProductInfoFind {
+class ProductInfoFindTest {
 
     @ParameterizedTest(name = "获取文件信息中所有文件的内容")
     @CsvSource(
@@ -15,5 +15,6 @@ class ProductInfoFind {
     fun readProductListFromFile(productListFile: String) {
 
     }
+
 
 }
