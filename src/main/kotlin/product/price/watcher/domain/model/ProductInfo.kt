@@ -1,6 +1,6 @@
 package product.price.watcher.domain.model
 
-import product.price.watcher.domain.acl.IProductInfoClient
+import product.price.watcher.domain.acl.IProductExtandInfoClient
 import product.price.watcher.infrastructure.integration.DomainRegistry
 
 class ProductInfo(
@@ -24,7 +24,7 @@ class ProductInfo(
     fun findRealtimePricePrice(): Int {
 
         return DomainRegistry
-            .bean(IProductInfoClient::class.java)
+            .bean(IProductExtandInfoClient::class.java)
             .getRealTimePrice(buyingLink)
 
     }

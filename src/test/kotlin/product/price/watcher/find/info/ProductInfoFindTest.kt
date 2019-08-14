@@ -5,9 +5,9 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
-import product.price.watcher.domain.acl.IProductInfoClient
+import product.price.watcher.domain.acl.IProductExtandInfoClient
 import product.price.watcher.domain.model.ProductInfo
-import product.price.watcher.infrastructure.domain.acl.ProductInfoClient
+import product.price.watcher.infrastructure.domain.acl.ProductExtandInfoClient
 import product.price.watcher.infrastructure.domain.repo.ProductInfoRepo
 import product.price.watcher.infrastructure.integration.DomainRegistry
 
@@ -27,7 +27,7 @@ class ProductInfoFindTest {
         @JvmStatic
         fun init() {
             DomainRegistry.initBeans {
-                it[IProductInfoClient::class.java] = ProductInfoClient()
+                it[IProductExtandInfoClient::class.java] = ProductExtandInfoClient()
                 it
             }
         }

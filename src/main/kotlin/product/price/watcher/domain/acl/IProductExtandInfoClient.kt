@@ -3,7 +3,7 @@ package product.price.watcher.domain.acl
 /**
  * 获取产品信息
  */
-interface IProductInfoClient {
+interface IProductExtandInfoClient {
 
     /**
      * 实时价格获取
