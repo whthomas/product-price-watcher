@@ -21,7 +21,7 @@
         <junit.version>5.4.2</junit.version>
 
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <okhttp.version>4.0.1</okhttp.version>
+        <okhttp.version>4.9.2</okhttp.version>
         <jsoup.version>1.12.1</jsoup.version>
 
     </properties>
